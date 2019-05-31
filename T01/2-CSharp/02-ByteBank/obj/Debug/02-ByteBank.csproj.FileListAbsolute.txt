@@ -1,0 +1,7 @@
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\obj\Debug\02-ByteBank.csprojAssemblyReference.cache
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\obj\Debug\02-ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\bin\Debug\02-ByteBank.exe.config
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\bin\Debug\02-ByteBank.exe
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\bin\Debug\02-ByteBank.pdb
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\obj\Debug\02-ByteBank.exe
+C:\Users\stag006\Desktop\CSharp\2-CSharp\Exercícios\ByteBank\02-ByteBank\obj\Debug\02-ByteBank.pdb
