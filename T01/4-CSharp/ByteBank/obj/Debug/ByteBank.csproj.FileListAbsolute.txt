@@ -5,3 +5,7 @@ C:\Users\stag006\Desktop\GitHub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.csprojA
 C:\Users\stag006\Desktop\GitHub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
 C:\Users\stag006\Desktop\GitHub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.exe
 C:\Users\stag006\Desktop\GitHub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.pdb
+C:\Users\stag006\Desktop\Git Hub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+C:\Users\stag006\Desktop\Git Hub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\stag006\Desktop\Git Hub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\stag006\Desktop\Git Hub\T01\4-CSharp\ByteBank\obj\Debug\ByteBank.pdb
