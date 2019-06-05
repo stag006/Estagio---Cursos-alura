@@ -14,9 +14,28 @@ namespace Alura.Loja.Testes.ConsoleApp
 
             //  GravarUsandoAdoNet();
             //  GravarUsandoEntity();
-                RecuperarProdutos();
-                ExcluirProdutos();
-                RecuperarProdutos();
+            //  RecuperarProdutos();
+            //  ExcluirProdutos();
+            //  RecuperarProdutos();
+            AtualizarProduto();
+        }
+
+        private static void AtualizarProduto()
+        {
+            // Incluir o produto 
+            GravarUsandoEntity();
+            RecuperarProdutos();
+
+
+            // Atualizar o produto
+            using (var repo = new LojaContext())
+            {
+                Produto primeiro = repo.Produtos.First();
+                primeiro.Nome = "Harry Potter e a Ordem da Fênix - Editado";
+                repo.Produtos.Update(primeiro);
+                repo.SaveChanges();
+            }
+            RecuperarProdutos();
         }
 
         private static void ExcluirProdutos()
