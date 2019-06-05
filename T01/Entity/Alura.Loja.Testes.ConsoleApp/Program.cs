@@ -13,20 +13,22 @@ namespace Alura.Loja.Testes.ConsoleApp
             // Criações e alterações de métodos
 
             //  GravarUsandoAdoNet();
-            //GravarUsandoEntity();
-            RecuperarProdutos();
-            ExcluirProdutos();
+            //  GravarUsandoEntity();
+                RecuperarProdutos();
+                ExcluirProdutos();
+                RecuperarProdutos();
         }
 
         private static void ExcluirProdutos()
         {
             using (var repo = new LojaContext())
             {
-                IList<Produto> Produtos = repo.Produtos.ToList();
-                foreach (var item in Produtos)
+                IList<Produto> produtos = repo.Produtos.ToList();
+                foreach (var item in produtos)
                 {
                     repo.Produtos.Remove(item);
                 }
+                repo.SaveChanges();
             }
         }
 
@@ -34,8 +36,9 @@ namespace Alura.Loja.Testes.ConsoleApp
         {
             using (var repo = new LojaContext())
             {
-                IList<Produto> Produtos = repo.Produtos.ToList();
-                foreach (var item in Produtos)
+                IList<Produto> produtos = repo.Produtos.ToList();
+                Console.WriteLine("Foram encontrados {0} produtos (s).", produtos.Count);
+                foreach (var item in produtos)
                 {
                     Console.WriteLine(item.Nome);
                 }
