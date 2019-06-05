@@ -28,12 +28,11 @@ namespace Alura.Loja.Testes.ConsoleApp
 
 
             // Atualizar o produto
-            using (var repo = new LojaContext())
+            using (var repo = new ProdutoDAOEntity())
             {
-                Produto primeiro = repo.Produtos.First();
+                Produto primeiro = repo.Produtos().First();
                 primeiro.Nome = "Harry Potter e a Ordem da Fênix - Editado";
-                repo.Produtos.Update(primeiro);
-                repo.SaveChanges();
+                repo.Atualizar(primeiro);
             }
             RecuperarProdutos();
         }
