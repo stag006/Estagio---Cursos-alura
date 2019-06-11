@@ -4,12 +4,14 @@ body {
 	font-size: 120%;
 }
 
+
 main h1 {
     font-size: 60px;
     background-color: #851944;
-    color: F2FFFC;
+    color: #F2FFFC;
     text-align: center;
 	font-family: "Open Sans Condensed", "Arial", sans-serif;
+    padding: 20px;
 }
 
 h2 {
