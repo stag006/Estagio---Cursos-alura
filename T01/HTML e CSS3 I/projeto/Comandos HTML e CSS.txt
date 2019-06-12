@@ -1,0 +1,26 @@
+OBS: Cria a borda na caixa de diálogo, logo a baixo tem os atalhos junto com os exemplos.
+
+border-left: 30px solid red;   
+border-bottom: 30px solid red;
+border-top: 30px solid transparent;
+border-right: 30px solid red;
+width: 0;
+
+ * A propriedade margin controla o espaço entre elementos.
+
+ * A propriedade padding controla o espaço entre o conteúdo de um elemento e sua borda.
+
+ * As propriedades width e height controlam apenas o tamanho de um elemento, e não afetam o espaçamento entre esse elemento e seus vizinhos. Já a propriedade box-sizing controla apenas como a largura e a altura de um elemento deve ser calculada.
+
+ * Por fim, a propriedade line-height controla apenas a altura entre as linhas de texto da página, não afetando a distância entre elementos.
+
+
+(fonte-size = define o tamanho do "texto").. font-size: 60px;
+
+(fonte-family = define a fonte.......Times New Roman, serife).. font-family: "Arial," "Time New Roman", serif;
+
+(fonte-style = define se o texto vai ser regular, itálico ou negrito) font-style: italic;
+
+(text-aligner = Serve para alinhar. center, justify).. text-aligner: center, justify;
+
+
