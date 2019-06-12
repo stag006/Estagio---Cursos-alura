@@ -2,20 +2,19 @@ body {
     background-color: #F2FFFC;
     font-family: "Crimson Text", serif;
     font-size: 20px;
+    line-height: 1.5;
+}
+
+h1, h2 {
+	font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
 main h1{
-    font-size: 60px;
-    background-color: #851944;
-    color: #F2FFFC;
-    text-align:center;
-    font-family:"Open Sans Condensed", "Arial", sans-serif;
-    padding: 60px;
-
-}
-h2 {
-    font-size: 40px;
-    font-family:"Open Sans Condensed", "Arial", sans-serif;    
+    text-align: center;
+	background-color: #851944;
+	color: #FFF;
+	padding: 25px;
+	border-bottom: 10px solid black;
 }
 
 p {
@@ -30,6 +29,25 @@ blockquote {
     box-sizing:  border-box;
 }
 
-aside, footer {
+aside {
+	background-color: #3C1D3D;
+	color: #F2FFFC;
+}
+
+footer {
+	background-color: #000;
+	color: #F2FFFC;
+}
+
+blockquote, aside, footer {
     padding: 20px;
+}
+
+main div {
+	width: 720px;
+	margin: auto;
+}
+
+aside {
+	text-align: center;
 }
