@@ -1,5 +1,7 @@
 * Foto
  *Arthur Teixeira
+	Sou  estudante de engenharia civil, tenho 23 anos e sou apaixonado por programação e compartilhar conhecimento.
+
 * Estudante de Engenharia Civil, Análise de Desenvolvimento de Sistemas
 * 23 anos . Brasileiro . Solteiro
 

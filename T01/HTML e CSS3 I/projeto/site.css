@@ -44,3 +44,8 @@ aside a {
 	color: inherit;
 	font-family: "Open Sans Condensed", sans-serif;
 }
+
+main div {
+    width: 720px;
+    margin: auto;
+}
