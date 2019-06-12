@@ -26,4 +26,6 @@ blockquote {
     background-color: #D3DDDA;
     padding: 16px;
     border: 10px solid #C2CCCA;
+    width: 198px;
+    box-sizing:  border-box;
 }
