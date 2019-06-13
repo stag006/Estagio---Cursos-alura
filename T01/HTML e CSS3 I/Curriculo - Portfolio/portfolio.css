@@ -5,7 +5,7 @@
 body {
     background: #000000; 
 }
-div{
+div {
     position: relative;
     width: 20%;
     height: 200px;
@@ -32,8 +32,11 @@ div{
     border: 5px solid red;
     zoom: 125%;
 }
+.endereco {
+    clear: both;
+}
 
-div div1 {
+.dados-pessoais {
     color: white;
     position: absolute;
      width: 20%;
