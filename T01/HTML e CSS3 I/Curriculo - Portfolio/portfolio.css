@@ -1,7 +1,49 @@
-body{
-    width: 250px;
-    height: 300px;
-    border: 10px solid #000000;
-    cursor: hand;
+*{
+    margin:0;
+    padding: 500;
+}
+body {
+    background: #000000; 
+}
+div{
+    position: relative;
+    width: 20%;
+    height: 200px;
+    background-color: grey;
+    border bottom: solid 4px double white;
+    
+    
+    
+}
+.perfil {
+    width: 110px;
+    height: 110px;
+    border: 5px double #808080;
+    border-radius: 55%;
+    padding: inherit;
+    margin: 40px, 20px;
+    position: absolute;
+    top: 30px;
+    left:50px; 
+    
+}
+
+.perfil:hover {
+    border: 5px solid red;
+    zoom: 125%;
+}
+
+div div1 {
+    color: white;
+    position: absolute;
+     width: 20%;
+    height: 200px;
+}
+div1 h1 {
+    text-align: center
+        
+}
+
+    
 
  
