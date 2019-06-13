@@ -82,3 +82,10 @@ em {
 h2 {
     font-size: 30 px;
 }
+
+.icones-sociais li {
+    display: inline-block;        
+}
+
+.social-rodape {
+    margin: 60px;

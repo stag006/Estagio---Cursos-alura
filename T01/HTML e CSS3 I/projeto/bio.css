@@ -1,3 +1,4 @@
+
 body { 
     background-color: #F2FFFC;
     font-family: "Crimson Text", serif;
@@ -47,8 +48,12 @@ main div {
 	width: 720px;
 	margin: auto;
 }
-aside li {
-    display: inline;
+.icones-sociais li {
+    display: inline-block;        
+}
+
+.social-rodape {
+    margin: 60px;
 }
 
 
