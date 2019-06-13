@@ -38,10 +38,18 @@ div div1 {
     position: absolute;
      width: 20%;
     height: 200px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Arial", serif;
+    
 }
-div1 h1 {
-    text-align: center
-        
+
+div, div1, h5, p {
+    text-align: justify;
+    font-family: "Arial", serif;
+    font-style: italic;
+   
+    
 }
 
     
