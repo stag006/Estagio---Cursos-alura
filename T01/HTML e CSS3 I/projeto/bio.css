@@ -16,6 +16,7 @@ main h1{
 	color: #FFF;
 	padding: 25px;
 	border-bottom: 10px solid black;
+    text-transform: uppercase;
 }
 
 p {
@@ -49,14 +50,26 @@ main div {
 	margin: auto;
 }
 .icones-sociais li {
-    display: inline-block;        
+    display: inline-block;     
 }
 
-.social-rodape {
-    margin: 60px;
+.icones-sociais a {    
+    width: 40px;
+    height: 40px;
+    display: inline-block;   
+    text-indent: -99999px;
 }
 
+.github {
+    background-image: url(github.png);
+}
 
+.twitter {
+    background-image: url(twitter.png);
+}
 
+.linkdin {
+    background-image: url(linkedin.png);
+}
 
 
