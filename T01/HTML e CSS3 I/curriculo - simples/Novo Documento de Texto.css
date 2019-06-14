@@ -1,0 +1,25 @@
+*{
+	margin: 0;
+}
+
+body {
+    margin: 0% 20%;
+    padding: 3%;
+	background-color: black;
+	color: white;
+	text-align: justify;
+    border: double gray;
+    width: 50%;
+    height: 100%;
+    text-align: justify;
+}
+
+body h1 {
+    text-align: center;
+}
+
+
+. dados {
+    text-align: left;
+}
+

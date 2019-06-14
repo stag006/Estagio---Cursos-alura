@@ -1,0 +1,21 @@
+*{
+	margin: 0;
+}
+
+body {
+	position: absolute;
+	padding: 3%;
+	background-color: black;
+	border: double red;
+	width: 100%;
+	height: 30%;
+	color: white;
+}
+
+body h1 {
+	color: black
+}
+
+. icones a {
+	text-color: green;
+}

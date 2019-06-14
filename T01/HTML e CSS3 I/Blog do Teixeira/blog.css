@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+}
+.capa {
+    width: 1400px;
+    height: 250px;    
+}
+
+.titulo {
+    position:absolute;
+    top: 180px;
+    left: 40%;    
+}
+.titulo h1 {
+    color: white;
+    font-family: "Times New Roman", "Arial", serif;
+    font-size: 55px;
+   font-style: italic;
+}
+
+.navegacao li {
+    display:  inline-block;
+    font-size: 30px;
+    background: #696969;
+    padding: 5px;
+   
+}
+
+.navegacao a {
+    text-align: center;
+}
+
+body {
+	position: relative;
+	background-color: white;
+	color: black;
+}
+
+body h1 {
+	color: black
+}
+
+div ul a{
+	color: black;
+}
