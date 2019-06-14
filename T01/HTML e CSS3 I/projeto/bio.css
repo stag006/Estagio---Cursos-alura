@@ -38,7 +38,7 @@ blockquote {
 }
 
 aside {
-	background-color: #3C1D3D;
+	background-color: #3C1D3D;    
 	color: #F2FFFC;
 }
 
@@ -90,10 +90,16 @@ aside, img {
     float: right;
     width: 15%;        
 }
+cite {
+    font-style: italic;
+    float: right;
+}
 
 aside {
     clear: right;
     box-sizing: border-box;
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
 }
 
 main {
