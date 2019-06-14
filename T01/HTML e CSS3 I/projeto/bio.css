@@ -87,9 +87,20 @@ main div {
 }
 
 aside, img {
-    float: right;    
+    float: right;
+    width: 15%;        
 }
 
 aside {
     clear: right;
+    box-sizing: border-box;
+}
+
+main {
+    float: left;
+    width: 85%;
+}
+
+.clearfix {
+    clear: both;
 }
