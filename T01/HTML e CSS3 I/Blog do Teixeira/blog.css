@@ -20,14 +20,15 @@
 
 .navegacao li {
     display:  inline-block;
-    font-size: 30px;
-    background: #696969;
+    font-size: 30px;    
     padding: 5px;
    
 }
 
-.navegacao a {
+.navegacao {
     text-align: center;
+    background-color: burlywood;
+   
 }
 
 body {
@@ -51,4 +52,49 @@ div ul a{
     left: 50px;
     top: 400px;
 
+}
+
+.bio {
+    width: 40%;
+    height: 20%;    
+    position: relative;
+    left: 50%;
+    top: 100px;
+    font-size: 20px;
+    top: 100px;
+}
+
+footer {
+    padding: 15px;
+    position: relative;
+    top: 500px;
+    clear: both;
+    background-color: black;
+    color: white;
+}
+
+icones-sociais li {
+    display: inline-block; 
+}
+
+.icones-sociais a { 
+    position: relative;
+    top: 550px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;   
+    text-indent: -99999px;
+    display: inline-block;
+}
+
+.github {
+    background-image: url(github.png);
+}
+
+.twitter {
+    background-image: url(twitter.png);
+}
+
+.linkdin {
+    background-image: url(linkedin.png);
 }
