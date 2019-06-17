@@ -32,7 +32,7 @@
 
 body {
 	position: relative;
-	background-color: white;
+	background-color: #696969;
 	color: black;
 }
 
@@ -42,4 +42,13 @@ body h1 {
 
 div ul a{
 	color: black;
+}
+
+.perfil {
+    width: 407px;
+    height: 300px;
+    position:absolute;
+    left: 50px;
+    top: 400px;
+
 }
