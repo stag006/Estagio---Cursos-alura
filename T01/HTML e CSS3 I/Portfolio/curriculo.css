@@ -1,0 +1,38 @@
+#folha{
+    width: 595px;
+    height: 842px;
+    border: 1px solid darkcyan;
+    margin: auto;
+    position: relative;
+}
+
+#perfil{
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 125px;
+    border: double black;
+    box-shadow: 2px 3px 10px black;
+     margin-top: 20px;
+    margin-left: 20px;
+    filter: grayscale(100);    
+}
+
+#nome{
+    float: left;
+    margin-top: 60px;
+    margin-left: 30px;
+    font-family: arial;
+}
+
+#nasc{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 205px;
+}
+
+.aba{
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 30px;
+}
