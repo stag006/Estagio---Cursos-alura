@@ -86,27 +86,32 @@ main div {
     float: left;
 }
 
-aside, img {
-    float: right;
-    width: 15%;        
-}
-cite {
-    font-style: italic;
-    float: right;
-}
-
-aside {
-    clear: right;
-    box-sizing: border-box;
-    border-left: 10px solid black;
-    border-bottom: 10px solid black;
-}
-
 main {
-    float: left;
-    width: 85%;
+	float: left;
+	width: 85%;
+	padding-bottom: 80px;
 }
 
-.clearfix {
-    clear: both;
+.minha-foto, .navegacao-site {
+	float: right;
+	box-sizing: border-box;
+	border-left: 10px solid black;
+	border-bottom: 10px solid black;
+}
+
+cite {
+	font-style: italic;
+	float: right;
+}
+
+.minha-foto {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.navegacao-site {
+	width: 15%;
+	position: relative;
+	top: 310px;
 }
