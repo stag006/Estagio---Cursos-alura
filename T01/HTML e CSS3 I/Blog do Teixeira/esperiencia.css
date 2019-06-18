@@ -22,16 +22,12 @@
     display:  inline-block;
     font-size: 30px;    
     padding: 5px;
-<<<<<<< HEAD
-=======
    
 }
 
 .navegacao {
     text-align: center;
     background-color: burlywood;
-   
->>>>>>> 497fb40255eac12af12599795c12c0b39f93c73a
 }
 
 body {
@@ -47,8 +43,6 @@ body h1 {
 div ul a{
 	color: black;
 }
-<<<<<<< HEAD
-=======
 
 .perfil {
     width: 407px;
@@ -103,4 +97,4 @@ icones-sociais li {
 .linkdin {
     background-image: url(linkedin.png);
 }
->>>>>>> 497fb40255eac12af12599795c12c0b39f93c73a
+
