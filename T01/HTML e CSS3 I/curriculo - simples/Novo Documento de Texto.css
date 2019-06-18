@@ -23,3 +23,8 @@ body h1 {
     text-align: left;
 }
 
+.perfil {
+    width: 150px;
+    height: 150px;
+    float: right;
+}
