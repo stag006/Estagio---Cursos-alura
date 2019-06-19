@@ -1,7 +1,7 @@
 #folha{
     width: 595px;
     height: 842px;
-    border: 1px solid darkcyan;
+    border: 1px solid darkcyan;    
     margin: auto;
     position: relative;
 }
@@ -10,10 +10,10 @@
     width: 150px;
     height: 150px;
     float: left;
-    border-radius: 125px;
+    border-radius: 150px;
     border: double black;
     box-shadow: 2px 3px 10px black;
-     margin-top: 20px;
+    margin-top: 20px;
     margin-left: 20px;
     filter: grayscale(100);    
 }
@@ -40,6 +40,7 @@
 
 .aba h1{
     margin: 0;
+    font-size: 25px;
 }
 
 .sep{
@@ -50,5 +51,109 @@
 }
 
 .dados{
-    margin:  0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
 }
+
+
+/*Nessa classe aba40: Objetivo */
+.aba2 {
+     position: absolute;
+    margin-top: 370px;
+    margin-left: 30px;
+    width: 505px;
+}
+
+.aba2 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.aba2 h3{
+    margin: 0;
+    
+}
+
+img{
+    width: 20px;
+    height: 20px;   
+    float: left;    
+}
+
+
+/*Nessa classe aba40: COMPETÊNCIAS PESSOAIS */
+.aba3 {
+     position: absolute;
+    margin-top: 560px;
+    margin-left: 30px;
+    width: 505px;
+}
+
+.aba3 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.aba3 h3{
+    margin: 0;
+    
+}
+
+img{
+    width: 20px;
+    height: 20px;   
+    float: left;    
+}
+
+/*Nessa classe aba40: Escolaridade */
+.aba4 {
+     position: absolute;
+    margin-top: 725px;
+    margin-left: 30px;
+    width: 505px;
+}
+
+.aba4 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.aba4 h3{
+    margin: 0;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print(){
+    body *{
+        visibility: hidden;
+    }
+    #estrutura, #estrutura *{
+        visibility: visible;
+    }
+    #estrtura{
+        position: fixed;
+        top; 0;
+        left: 0;
+    }
+}
+
+
