@@ -18,6 +18,11 @@
     filter: grayscale(100);    
 }
 
+#perfil:hover {
+    border: 2px double red;
+    zoom: 125%;
+}
+
 #nome{
     float: left;
     margin-top: 60px;
@@ -116,6 +121,7 @@ img{
     margin: auto;
     margin-top: 10px;
     position: relative;
+    
 }
 
 /*Nessa classe aba4: Escolaridade */
@@ -135,7 +141,7 @@ img{
     margin: 0;    
 }
 
-/*Nessa classe aba5: Escolaridade */
+/*Nessa classe aba5: Experiencia profissional */
 .aba5 {
      position: absolute;
     margin-top: 220px;
@@ -153,7 +159,7 @@ img{
 }
 
 
-/*Nessa classe aba6: Escolaridade */
+/*Nessa classe aba6: Cursos e Qualificações */
 .aba6 {
      position: absolute;
     margin-top: 450px;
@@ -171,15 +177,7 @@ img{
 }
 
 
-
-
-
-
-
-
-
-
-
+/*Emprimir */
 @media print(){
     body *{
         visibility: hidden;
@@ -193,5 +191,6 @@ img{
         left: 0;
     }
 }
+
 
 
