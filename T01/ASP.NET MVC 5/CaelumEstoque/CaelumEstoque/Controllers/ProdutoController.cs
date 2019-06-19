@@ -18,5 +18,10 @@ namespace CaelumEstoque.Controllers
             ViewBag.Produtos = Produtos;
             return View();
         }
+
+        public ActionResult Form()
+        {
+            return View();
+        }
     }
 }
