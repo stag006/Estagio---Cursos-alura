@@ -106,10 +106,22 @@ img{
     float: left;    
 }
 
-/*Nessa classe aba40: Escolaridade */
+
+
+/*Folha 2*/
+#folha2{
+    width: 595px;
+    height: 842px;
+    border: 1px solid darkcyan;    
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+/*Nessa classe aba4: Escolaridade */
 .aba4 {
      position: absolute;
-    margin-top: 725px;
+    margin-top: 50px;
     margin-left: 30px;
     width: 505px;
 }
@@ -123,11 +135,22 @@ img{
     margin: 0;    
 }
 
+/*Nessa classe aba5: Escolaridade */
+.aba5 {
+     position: absolute;
+    margin-top: 220px;
+    margin-left: 30px;
+    width: 505px;
+}
 
+.aba5 h1 {
+    margin: 0;
+    font-size: 25px;
+}
 
-
-
-
+.aba5 h3{
+    margin: 0;    
+}
 
 
 
