@@ -153,7 +153,22 @@ img{
 }
 
 
+/*Nessa classe aba6: Escolaridade */
+.aba6 {
+     position: absolute;
+    margin-top: 450px;
+    margin-left: 30px;
+    width: 505px;
+}
 
+.aba6 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.aba6 h3{
+    margin: 0;    
+}
 
 
 
