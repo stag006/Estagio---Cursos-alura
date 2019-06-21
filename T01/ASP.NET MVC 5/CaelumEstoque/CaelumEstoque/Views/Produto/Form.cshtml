@@ -15,6 +15,7 @@
         <form action="/Produto/Adiciona" method="post">
             <label for="nome">Nome:</label>
             <input id="nome" name="produto.Nome" />
+            @Html.ValidationMessage("produto.Nome")
 
 
             <label for="preco">Preco:</label>
