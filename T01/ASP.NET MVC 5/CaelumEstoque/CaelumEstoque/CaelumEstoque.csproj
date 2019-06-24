@@ -92,6 +92,8 @@
     <Content Include="App_Data\DBEstoque_log.ldf">
       <DependentUpon>DBEstoque.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Css\bootstrap.css" />
+    <Content Include="Content\Css\Site.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -108,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="DAO\CategoriasDAO.cs" />
@@ -129,6 +132,9 @@
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\Form.cshtml" />
     <Content Include="Views\Produto\Adiciona.cshtml" />
+    <Content Include="Views\Produto\Visualiza.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,7 +143,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
+    <Folder Include="Views\Categoria\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

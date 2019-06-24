@@ -1,15 +1,6 @@
-﻿@{
-    Layout = null;
-}
+﻿@model IList<CaelumEstoque.Models.Produto>
 
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de produtos</title>
-</head>
-<body>
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -18,15 +9,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var produto in ViewBag.Produtos)
+            @foreach (CaelumEstoque.Models.Produto produto in ViewBag.Produtos)
             {
                 <tr>
                     <td>@produto.Id</td>
-                    <td>@produto.Nome</td>
+                    <td>
+                        @Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })
+                    </td>
                     <td>@produto.Preco</td>
                 </tr>
             }
         </tbody>
     </table>
-</body>
-</html>
