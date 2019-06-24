@@ -30,6 +30,11 @@ namespace CaelumEstoque.Controllers
         [HttpPost]
         public ActionResult Adiciona(Produto produto)
         {
+            int idDaInformatica = 1;
+            if (produto.CategoriaId.Equals(idDaInformatica) && produto.Preco < 100)
+            {
+                ModelState.AddModelError()
+            }
             if (ModelState.IsValid)
             {
                 ProdutosDAO dao = new ProdutosDAO();
