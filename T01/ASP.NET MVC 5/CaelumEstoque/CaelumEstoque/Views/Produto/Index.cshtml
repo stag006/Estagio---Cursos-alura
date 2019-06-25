@@ -16,7 +16,12 @@
                     <td>
                         @Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })
                     </td>
-                    <td>@produto.Preco</td>
+                    <td>
+                    @produto.Preco
+                    </td>
+                    <td>
+                        <a href="/Produto/DecrementaQtd/@produto.Id">Decrementar</a>
+                    </td>
                 </tr>
             }
         </tbody>
