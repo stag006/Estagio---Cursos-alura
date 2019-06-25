@@ -7,6 +7,8 @@ namespace CaelumEstoque.Models
 {
     public class Usuario
     {
+        internal static object usuario;
+
         public int Id { get; set; }
 
         public string Nome { get; set; }
