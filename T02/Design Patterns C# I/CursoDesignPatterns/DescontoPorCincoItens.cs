@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    class DescontoPorCincoItens : Desconto
+    public class DescontoPorCincoItens : Desconto
     {
         public Desconto Proximo { get; set; }
 
         public double Desconta(Orcamento orcamento)
         {
-            if (orcamento.itens.Count > 5)
+            if (orcamento.Itens.Count > 5)
             {
                 return orcamento.Valor * 0.1;
             }
-            return Proximo.Desconto(orcamento);
+            else
+            {
+                return Proximo.Desconta(orcamento);
+            }
+            
         }
     }
 }

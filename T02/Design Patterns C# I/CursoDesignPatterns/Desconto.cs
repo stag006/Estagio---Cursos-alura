@@ -8,8 +8,8 @@ namespace CursoDesignPatterns
 {
     public interface Desconto
     {
-        double Desconto(Orcamento orcamento);
-        Desconto Proximo { get; set; }
+        double Desconta(Orcamento orcamento);
+        Desconto Proximo { private get; set; }
 
     }
 }

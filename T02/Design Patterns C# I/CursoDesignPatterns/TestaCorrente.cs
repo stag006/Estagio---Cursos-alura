@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class CalculadorDeDescontos
+    public class TestaCorrente
     {
-        public double Calcula(Orcamento orcamento)
+        static void Main(String[] args)
         {
             Desconto d1 = new DescontoPorCincoItens();
             Desconto d2 = new DescontoPorMaisDeQuinhentosReais();
-            Desconto d3 = new SemDesconto();
+            Desconto d3 = new DescontoPorVendaCasada();
+            Desconto d4 = new SemDesconto();
 
             d1.Proximo = d2;
             d2.Proximo = d3;
-            return d1.Desconta(orcamento);
+            d3.Proximo = d4;
+
+            Orcamento orcamento = new Orcamento(500.0);
+
+            double desconto = d1.Desconta(orcamento);
+            Console.WriteLine(desconto);
         }
     }
 }
