@@ -45,12 +45,14 @@
   <ItemGroup>
     <Compile Include="CalculadorDeImposto.cs" />
     <Compile Include="CalculadorDeImpostos.cs" />
+    <Compile Include="ICCC.cs" />
     <Compile Include="ICMS.cs" />
     <Compile Include="Imposto.cs" />
     <Compile Include="ISS.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
