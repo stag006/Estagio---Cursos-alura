@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class Conta
+    class Conta
     {
+        public String Titular { get; private set; }
         public double Saldo { get; private set; }
-        public void Deposita(double valor)
+
+        public Conta(String titular, double saldo)
         {
-            this.Saldo += valor;
+            this.Titular = titular;
+            this.Saldo = saldo;
         }
     }
 }

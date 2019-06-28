@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    interface Resposta
+    class FiltroMesmoMes
     {
-        void Responde(Requisicao req, Conta conta);
     }
 }

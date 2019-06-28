@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    interface Resposta
+    class FiltroMenorQue100Reais
     {
-        void Responde(Requisicao req, Conta conta);
     }
 }
