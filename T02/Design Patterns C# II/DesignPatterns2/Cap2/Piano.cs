@@ -10,7 +10,7 @@ namespace DesignPatterns2.Cap2
     {
        public void Toca(IList<INota> musica)
         {
-            foreach (var nota in musica)
+            foreach (INota nota in musica)
             {
                 Console.Beep(nota.Frequencia, 300);
             }

@@ -1,5 +1,6 @@
 ﻿using DesignPatterns2.Cap1;
 using DesignPatterns2.Cap2;
+using DesignPatterns2.Cap3;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,18 +15,13 @@ namespace DesignPatterns2
     {
         static void Main(string[] args)
         {
-            NotasMusicais notas = new NotasMusicais();
-            IList<INota> musica = new List<INota>()
-            {
-                 notas.Pega("do"),
-                 notas.Pega("re"),
-                 notas.Pega("mi"),
-                 notas.Pega("fa"),
-                 notas.Pega("fa"),
-                 notas.Pega("fa"),
-            };
-            Piano piano = new Piano();
-            piano.Toca(musica);
+            Contrato c = new Contrato(DateTime.Now, "victor", TipoContrato.Novo);
+
+            Console.WriteLine(c.Tipo);
+
+            c.Avanca();
+
+            Console.WriteLine(c.Tipo);
         }
     }
 }

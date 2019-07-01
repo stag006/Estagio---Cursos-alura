@@ -2,5 +2,6 @@
 {
     enum TipoContrato
     {
+        Novo, EmAndamento, Acertado, Concluido, Contrato
     }
 }
