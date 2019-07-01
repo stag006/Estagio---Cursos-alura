@@ -6,19 +6,11 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    class ICPP : TamplateDeImpostoCondicional
+    public class ICPP : TemplateDeImpostoCondicional
     {
-        public bool DeveUsarMaximaTaaxacao(Orcamento orcamento)
-        {
-            return orcamento.Valor >= 500;            
-        }
-        public double MaximaTaxacao(Orcamento orcamento)
-        {
-            return orcamento.Valor * 0.07;
-        }
-        public double MinimaTaxacao(Orcamento orcamento)
-        {
-            return orcamento.Valor * 0.05;
-        }
+        public ICPP() : base() { }
+        public ICPP(Imposto outroImposto) : base(outroImposto) { }
+
+        // classe continua aqui...
     }
 }

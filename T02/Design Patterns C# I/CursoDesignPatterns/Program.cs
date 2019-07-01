@@ -10,14 +10,21 @@ namespace CursoDesignPatterns
     {
         static void Main(string[] args)
         {
-            Imposto iss = new ISS(new ICMS(new IKCV());
+            NotaFiscalBuilder criador = new NotaFiscalBuilder();
+            criador
+                .ParaEmpresa("Caelum Ensino e Inovacao")
+                .ComCnpj("23.456.789/0001-12")
+            
+                .ComItem(new ItemDaNotaBuilder("item 1", 100.0))
+                .ComItem(new ItemDaNotaBuilder("item 2", 200.0))
+                .NaDataAtual()
+                .ComObservacoes("uma obs qualquer");
 
-            Orcamento orcamento = new Orcamento(500);
 
-            double valor = iss.Calcula(orcamento);
+            NotaFiscal nf = criador.Constroi();
 
-            Console.WriteLine(valor);
-
+            Console.WriteLine(nf.ValorBruto);
+            Console.WriteLine(nf.Impostos);
             Console.ReadKey();
         }
     }
