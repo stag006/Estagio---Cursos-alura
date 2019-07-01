@@ -1,6 +1,7 @@
 ﻿using DesignPatterns2.Cap1;
 using DesignPatterns2.Cap2;
 using DesignPatterns2.Cap3;
+using DesignPatterns2.Cap4;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,15 +14,9 @@ namespace DesignPatterns2
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main (string[] args)
         {
-            Contrato c = new Contrato(DateTime.Now, "victor", TipoContrato.Novo);
-
-            Console.WriteLine(c.Tipo);
-
-            c.Avanca();
-
-            Console.WriteLine(c.Tipo);
-        }
+            // (1 + 10) + (20 - 10)
+           k
     }
 }

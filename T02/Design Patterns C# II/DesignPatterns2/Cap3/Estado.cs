@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap3
 {
-    class Estado
+    public class Estado
     {
         public Contrato Contrato { get; private set; }
 

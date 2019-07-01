@@ -1,7 +1,7 @@
 ﻿namespace DesignPatterns2.Cap3
 {
-    enum TipoContrato
+    public enum TipoContrato
     {
-        Novo, EmAndamento, Acertado, Concluido, Contrato
+        Novo, EmAndamento, Acertado, Concluido
     }
 }
