@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap4
 {
-    class Soma : IExpressao
-    {        
+    class Divisao : IExpressao
+    {
         private IExpressao esquerda;
         private IExpressao direita;
-        public Soma(IExpressao esquerda, IExpressao direita)
+
+        public Divisao(IExpressao esquerda, IExpressao direita)
         {
             this.esquerda = esquerda;
             this.direita = direita;
         }
+
         public int Avalia()
         {
-            int valorEsquerda = esquerda.Avalia();
-            int valorDireita = direita.Avalia();
-            return valorEsquerda + valorDireita;
+            int resultadoDaEsquerda = esquerda.Avalia();
+            int resultadoDaDireita = direita.Avalia();
+            return resultadoDaEsquerda / resultadoDaDireita;
         }
     }
+}
 }

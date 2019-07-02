@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap4
 {
-    class Numero : IExpressao
+    class RaizQuadrada : IExpressao
     {
-        private int numero;
-        public Numero(int numero)
+        private IExpressao expressao;
+
+        public RaizQuadrada(IExpressao e)
         {
-            this.numero = numero;
+            this.expressao = e;
         }
+
         public int Avalia()
         {
-            return this.numero;
+            return (int)Math.Sqrt(expressao.Avalia());
         }
     }
 }

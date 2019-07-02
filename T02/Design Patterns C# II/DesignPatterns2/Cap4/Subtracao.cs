@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DesignPatterns2.Cap4
 {
     class Subtracao : IExpressao
-    {
+    { 
         private IExpressao esquerda;
         private IExpressao direita;
 
@@ -15,6 +15,12 @@ namespace DesignPatterns2.Cap4
         {
             this.esquerda = esquerda;
             this.direita = direita;
+        }
+        public int Avalia()
+        {
+            int valorEsquerda = esquerda.Avalia();
+            int valorDireita = direita.Avalia();
+            return valorEsquerda + valorDireita;
         }
     }
 }
