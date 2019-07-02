@@ -9,14 +9,19 @@ namespace DesignPatterns2.Cap6
     class MensagemAdministrativa : IMensagem
     {
         private string nome;
+        public IEnviador Enviador { get; set; }
         public MensagemAdministrativa(string nome)
         {
             this.nome = nome;
         }
         public void Envia()
         {
-            Console.WriteLine("Enviando a mensagem por SMS");
-            Console.WriteLine("Mensagem para o cliente {0}", nome);
+            this.Enviador.Envia(this);
+        }
+
+        public string Formata()
+        {
+            return string.Format("Enviando a mensagem para o administrador {0}", nome);
         }
     }
 }

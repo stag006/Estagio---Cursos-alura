@@ -11,6 +11,6 @@ namespace DesignPatterns2.Cap4
     {
         int Avalia();
 
-        void Aceita(ImpressoraVisitor impressora);
+        void Aceita(IVisitor impressora);
     }
 }

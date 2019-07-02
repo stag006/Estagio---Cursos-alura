@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap7
 {
-    class Status
+    enum Status
     {
+        Novo,
+        Processado,
+        Pago,
+        ItemSeparado,
+        Entregue
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap6
 {
-    class EnviaPorEmail
+    class EnviaPorEmail : IEnviador
     {
+        public void Envia(IMensagem mensagem)
+        {
+            Console.WriteLine("Enviando a mensagem por e-mail");
+            Console.WriteLine(mensagem.Formata());
+        }
     }
 }

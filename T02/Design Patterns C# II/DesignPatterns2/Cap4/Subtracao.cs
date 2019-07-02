@@ -23,7 +23,7 @@ namespace DesignPatterns2.Cap4
             int valorDireita = Direita.Avalia();
             return valorEsquerda + valorDireita;
         }
-        public void Aceira(ImpressoraVisitor impressora)
+        public void Aceita(IVisitor impressora)
         {
             impressora.ImprimeSubtracao(this);
         }

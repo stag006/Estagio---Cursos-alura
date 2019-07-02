@@ -9,7 +9,7 @@ namespace DesignPatterns2.Cap4
 {
     class Numero : IExpressao
     {
-        public int Valor { get; private set}
+        public int Valor { get; private set};
         public Numero(int numero)
         {
             this.Valor = numero;
@@ -18,7 +18,7 @@ namespace DesignPatterns2.Cap4
         {
             return this.Valor;
         }
-        public void Aceira(ImpressoraVisitor impressora)
+        public void Aceita(IVisitor impressora)
         {
             impressora.ImprimeNumero(this);
         }
