@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.Cap6
 {
-    class MensagemPorEmail
+    interface IMensagem
     {
     }
 }
