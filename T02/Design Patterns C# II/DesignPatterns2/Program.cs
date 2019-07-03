@@ -23,15 +23,17 @@ namespace DesignPatterns2
     {
         static void Main(string[] args)
         {
-            Cliente cliente = new Cliente();
+            String cpf = "1234";
 
-            cliente.Nome = "victor";
-            cliente.Endereco = "Rua Vergueiro";
-            cliente.DatadeNascimento = DateTime.Now;
+            Cliente cliente = new ClienteDAO().BuscaPorCpf(cpf);
 
-            String xml = new GeradorDeXml().GeraXml(cliente);
+            Fatura fatura = new Fatura(cliente, 5000);
 
-            Console.WriteLine(xml);
+            Cobranca cobranca = new Cobranca(TipoContrato.Boleto, fatura);
+            cobranca.Emite();
+
+            ContatoCliente contato = new ContatoCliente(cliente, cobranca);
+            contato.Dispara();
         }
     }
 }
