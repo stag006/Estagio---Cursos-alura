@@ -29,10 +29,7 @@ namespace DesignPatterns2
             cliente.Endereco = "Rua Vergueiro";
             cliente.DatadeNascimento = DateTime.Now;
 
-            XmlSerializer serializer = new XmlSerializer(cliente.GetType());
-            StringWriter Writer = new StringWriter();
-            serializer.Serialize(Writer, cliente);
-            String xml = Writer.ToString();
+            String xml = new GeradorDeXml().GeraXml(cliente);
 
             Console.WriteLine(xml);
         }
