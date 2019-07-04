@@ -6,6 +6,7 @@ using DesignPatterns2.Cap5;
 using DesignPatterns2.Cap6;
 using DesignPatterns2.Cap7;
 using DesignPatterns2.Cap8;
+using DesignPatterns2.Cap9;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,15 +26,11 @@ namespace DesignPatterns2
         {
             String cpf = "1234";
 
-            Cliente cliente = new ClienteDAO().BuscaPorCpf(cpf);
+            EmpresaFacade facade = new EmpresaFacadeSingleton().Instancia;
+            Cliente cliente = facade.BuscaCliente(cpf);
 
-            Fatura fatura = new Fatura(cliente, 5000);
-
-            Cobranca cobranca = new Cobranca(TipoContrato.Boleto, fatura);
-            cobranca.Emite();
-
-            ContatoCliente contato = new ContatoCliente(cliente, cobranca);
-            contato.Dispara();
+            facade.CriaFatura(cliente, 5000);
+            facade.GeraCobranca(Tipo.Boleto, fatura);
         }
     }
 }

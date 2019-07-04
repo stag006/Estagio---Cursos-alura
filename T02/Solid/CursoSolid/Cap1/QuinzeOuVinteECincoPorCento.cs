@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns2.Cap9
+namespace CursoSolid
 {
-    class Servico
+    class QuinzeOuVinteECincoPorCento
     {
-
     }
 }
