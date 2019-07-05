@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CursoSolid.Cap1
+namespace ClassesAbertasOpenClosedEDependencyInversionPrinciples
 {
-    public abstract class Cargo
+    class Frete
     {
-        public Cargo(IRegraDeCalcula regra)
-        {
-
-        }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1CD4C5A-4E49-48E0-8B67-9C9B3659E7D2}</ProjectGuid>
+    <ProjectGuid>{E6222B4E-1443-4602-A91D-9E0E213F5ECF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CursoSolid</RootNamespace>
-    <AssemblyName>CursoSolid</AssemblyName>
+    <RootNamespace>ClassesAbertasOpenClosedEDependencyInversionPrinciples</RootNamespace>
+    <AssemblyName>ClassesAbertasOpenClosedEDependencyInversionPrinciples</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cap1\CalculadoraSalario.cs" />
-    <Compile Include="Cap1\Cargo.cs" />
-    <Compile Include="Cap1\DezOuVintePorcento.cs" />
-    <Compile Include="Cap1\Funcionario.cs" />
+    <Compile Include="CalculadoraDePrecos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Cap1\QuinzeOuVinteECincoPorCento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

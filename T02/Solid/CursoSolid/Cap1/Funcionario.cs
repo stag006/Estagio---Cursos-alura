@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CursoSolid.Cap1
 {
-    public abstract class Cargo
+    class Funcionario
     {
-        public Cargo(IRegraDeCalcula regra)
-        {
 
-        }
     }
 }
