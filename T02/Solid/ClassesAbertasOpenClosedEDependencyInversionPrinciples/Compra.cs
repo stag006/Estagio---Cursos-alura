@@ -8,5 +8,7 @@ namespace ClassesAbertasOpenClosedEDependencyInversionPrinciples
 {
     class Compra
     {
+        public string Cidade { get; set; }
+        public double Valor { get; set; }
     }
 }

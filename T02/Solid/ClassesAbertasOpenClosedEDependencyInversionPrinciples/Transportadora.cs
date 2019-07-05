@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClassesAbertasOpenClosedEDependencyInversionPrinciples
 {
-    class Transportadora
+    class Transportadora : IServicoDeEntrega
     {
+        public double Para(string cidade)
+        {
+            return 5; ;
+        }
     }
 }

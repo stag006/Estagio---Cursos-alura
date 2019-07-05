@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassesAbertasOpenClosedEDependencyInversionPrinciples
 {
-    interface ITabelaDePreco
+    public interface ITabelaDePreco
     {
+        double DescontoPara(double valor);
     }
 }

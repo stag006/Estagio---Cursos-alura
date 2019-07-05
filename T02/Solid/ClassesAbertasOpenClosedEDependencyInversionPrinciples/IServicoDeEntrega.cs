@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassesAbertasOpenClosedEDependencyInversionPrinciples
 {
-    interface IServicoDeEntrega
+    public interface IServicoDeEntrega
     {
+        double Para(string cidade);
     }
 }
