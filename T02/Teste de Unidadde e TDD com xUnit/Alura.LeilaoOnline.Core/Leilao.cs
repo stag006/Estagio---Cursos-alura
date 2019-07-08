@@ -1,13 +1,12 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Text;
+
 using System.Linq;
 
 namespace Alura.LeilaoOnline.Core
 {
     public class Leilao
     {
-        
         private IList<Lance> _lances;
         public IEnumerable<Lance> Lances => _lances;
         public string Peca { get; }
@@ -32,7 +31,7 @@ namespace Alura.LeilaoOnline.Core
         public void TerminaPregao()
         {
             Ganhador = Lances
-                .OrderBy(1 => 1.Valor)
+                .OrderBy(l => l.Valor)
                 .Last();
         }
     }
