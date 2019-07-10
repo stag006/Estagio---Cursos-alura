@@ -1,7 +1,6 @@
-﻿
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Alura.LeilaoOnline.Core
 {
@@ -10,11 +9,10 @@ namespace Alura.LeilaoOnline.Core
         LeilaoAntesDoPregao,
         LeilaoEmAndamento,
         LeilaoFinalizado
-        
     }
+
     public class Leilao
     {
-        
         private Interessada _ultimoCliente;
         private IList<Lance> _lances;
         private IModalidadeAvaliacao _avaliador;
@@ -23,10 +21,8 @@ namespace Alura.LeilaoOnline.Core
         public string Peca { get; }
         public Lance Ganhador { get; private set; }
         public EstadoLeilao Estado { get; private set; }
-        
-        public double ValorDestino { get; }
 
-        public Leilao(string peca,IModalidadeAvaliacao avaliador)
+        public Leilao(string peca, IModalidadeAvaliacao avaliador)
         {
             Peca = peca;
             _lances = new List<Lance>();
@@ -44,7 +40,6 @@ namespace Alura.LeilaoOnline.Core
         {
             if (NovoLanceEhAceito(cliente, valor))
             {
-
                 _lances.Add(new Lance(cliente, valor));
                 _ultimoCliente = cliente;
             }
@@ -59,7 +54,7 @@ namespace Alura.LeilaoOnline.Core
         {
             if (Estado != EstadoLeilao.LeilaoEmAndamento)
             {
-                throw new System.InvalidOperationException("Não é possivel terminar o pregão sem que ele tenha comecado. Para isso, utilize o metodo IniciaPregao().");
+                throw new System.InvalidOperationException("Não é possível terminar o pregão sem que ele tenha começado. Para isso, utilize o método IniciaPregao().");
             }
             Ganhador = _avaliador.Avalia(this);
             Estado = EstadoLeilao.LeilaoFinalizado;

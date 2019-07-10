@@ -42,7 +42,7 @@ namespace Alura.LeilaoOnline.ConsoleApp
             var valorEsperado = 1200;
             var valorObtido = leilao.Ganhador.Valor;
             Verifica(valorEsperado, valorObtido);
-
+            
         }
 
         private static void LeilaoComApenasUmLance()
@@ -69,6 +69,5 @@ namespace Alura.LeilaoOnline.ConsoleApp
             LeilaoComVariosLances();
             LeilaoComApenasUmLance();
         }
-
     }
 }
