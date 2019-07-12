@@ -68,10 +68,10 @@ namespace ByteBank.Portal.Infraestrutura
                     resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
                 }
             }
-            else if (path == "Cambio/MXN")
+            else if (path == "/Cambio/USD")
             {
                 var controller = new CambioController();
-                var paginaConteudo = controller.MXN();
+                var paginaConteudo = controller.USD();
 
                 var bufferArquivo = Encoding.UTF8.GetByteCount(paginaConteudo);  
                 
