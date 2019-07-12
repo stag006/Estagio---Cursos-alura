@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Portal.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -33,39 +34,55 @@ namespace ByteBank.Portal.Infraestrutura
 
                 httpListener.Prefixes.Add(prefixo);
 
-            httpListener.Start();
+              httpListener.Start();
 
             var contexto = httpListener.GetContext();
             var requisicao = contexto.Request;
             var resposta = contexto.Response;
 
             var path = requisicao.Url.AbsolutePath;
-            
-            var assembly = Assembly.GetExecutingAssembly();
 
-            var nomeResource =Utilidades.ConverterPathParaNomeAssembly(path);
-
-            var resourceStream = assembly.GetManifestResourceStream(nomeResource);
-
-            if(resourceStream == null)
+            if (Utilidades.EhArquivo(path))
             {
-                resposta.StatusCode = 404;
+                var assembly = Assembly.GetExecutingAssembly();
+
+                var nomeResource = Utilidades.ConverterPathParaNomeAssembly(path);
+
+                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
+
+                if (resourceStream == null)
+                {
+                    resposta.StatusCode = 404;
+                    resposta.OutputStream.Close();
+                }
+                else
+                {
+                    var bytesResource = new byte[resourceStream.Length];
+
+                    resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
+
+                    resposta.ContentType = Utilidades.ObterTipoDeConteudo(path);
+                    resposta.StatusCode = 200;
+                    resposta.ContentLength64 = resourceStream.Length;
+
+                    resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
+                }
+            }
+            else if (path == "Cambio/MXN")
+            {
+                var controller = new CambioController();
+                var paginaConteudo = controller.MXN();
+
+                var bufferArquivo = Encoding.UTF8.GetByteCount(paginaConteudo);  
+                
+                resposta.StatusCode = 200;
+                resposta.ContentType = "text/html; charset=utf-8";
+                resposta.ContentLength64 = bufferArquivo.Length;
+                
+
+                resposta.OutputStream.Write(bufferArquivo, 0, bufferArquivo.Length);
                 resposta.OutputStream.Close();
             }
-            else
-            {
-                var bytesResource = new byte[resourceStream.Length];
-
-                resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
-
-                resposta.ContentType = Utilidades.ObterTipoDeConteudo(path);
-                resposta.StatusCode = 200;
-                resposta.ContentLength64 = resourceStream.Length;
-
-                resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-            }
-
-            
 
             resposta.OutputStream.Close();
 

@@ -8,11 +8,22 @@ namespace ByteBank.Portal.Infraestrutura
 {
     public class Utilidades
     {
-
-        public static string ConverterPathParaNomeAssembly(string path)
+        public static bool EhArquivo(string path)
         {
             // /Assets/css/styles.css
             // /Assets/js/main.js
+            
+
+            var partesPath = path.Split(new char[] { '/'}, StringSplitOptions.RemoveEmptyEntries);
+            var ultimaParte = partesPath.Last();
+
+            return ultimaParte.Contains('.');
+
+        }
+
+        public static string ConverterPathParaNomeAssembly(string path)
+        {
+            
 
             var prefixoAssembly = "ByteBank.Portal";
             var pathComOntos = path.Replace('/', '.');
