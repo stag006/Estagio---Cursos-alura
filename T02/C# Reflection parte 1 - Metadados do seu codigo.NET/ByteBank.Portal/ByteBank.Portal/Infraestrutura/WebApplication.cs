@@ -40,46 +40,35 @@ namespace ByteBank.Portal.Infraestrutura
             var resposta = contexto.Response;
 
             var path = requisicao.Url.AbsolutePath;
+            
+            var assembly = Assembly.GetExecutingAssembly();
 
-            if (path == "/Assets/css/styles.css")
+            var nomeResource =Utilidades.ConverterPathParaNomeAssembly(path);
+
+            var resourceStream = assembly.GetManifestResourceStream(nomeResource);
+
+            if(resourceStream == null)
             {
-                // Retornar o nosso documento styles.css
-                var assembly = Assembly.GetExecutingAssembly();
-                var nomeResource = "ByteBank.Portal.Assets.css.styles.css";
-
-                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
+                resposta.StatusCode = 404;
+                resposta.OutputStream.Close();
+            }
+            else
+            {
                 var bytesResource = new byte[resourceStream.Length];
 
                 resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
 
-                resposta.ContentType = "text/css; cahrset=utf-8";
+                resposta.ContentType = Utilidades.ObterTipoDeConteudo(path);
                 resposta.StatusCode = 200;
                 resposta.ContentLength64 = resourceStream.Length;
 
                 resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-
-                resposta.OutputStream.Close();
-            }
-            else if (path == "Assets/js/main.js")
-            {
-                var assembly = Assembly.GetExecutingAssembly();
-                var nomeResource = "ByteBank.Portal.Assets.main.css";
-
-                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
-                var bytesResource = new byte[resourceStream.Length];
-
-                resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
-
-                resposta.ContentType = "application/js; cahrset=utf-8";
-                resposta.StatusCode = 200;
-                resposta.ContentLength64 = resourceStream.Length;
-
-                resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-
-                resposta.OutputStream.Close();
             }
 
-            httpListener.Stop();
+            
+
+            resposta.OutputStream.Close();
+
         }
     }
 }
