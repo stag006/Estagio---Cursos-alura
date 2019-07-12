@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,10 +21,16 @@ namespace ByteBank.Portal.Infraestrutura
 
         public void Iniciar()
         {
+            while (true)
+                ManipularRequisicao();
+        }
+
+        private void ManipularRequisicao()
+        {
             var httpListener = new HttpListener();
 
             foreach (var prefixo in _prefixos)
-            
+
                 httpListener.Prefixes.Add(prefixo);
 
             httpListener.Start();
@@ -32,19 +39,47 @@ namespace ByteBank.Portal.Infraestrutura
             var requisicao = contexto.Request;
             var resposta = contexto.Response;
 
-            var respostaConteudo = "Hello Word";
-            var respostaConteudoBytes = Encoding.UTF8.GetBytes(respostaConteudo);
+            var path = requisicao.Url.AbsolutePath;
 
-            resposta.ContentType = "text/html; cahrset=utf-8";
-            resposta.StatusCode = 200;
-            resposta.ContentLength64 = respostaConteudoBytes.Length;
+            if (path == "/Assets/css/styles.css")
+            {
+                // Retornar o nosso documento styles.css
+                var assembly = Assembly.GetExecutingAssembly();
+                var nomeResource = "ByteBank.Portal.Assets.css.styles.css";
 
-            resposta.OutputStream.Write(respostaConteudoBytes, 0, respostaConteudoBytes.Length);
+                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
+                var bytesResource = new byte[resourceStream.Length];
 
-            resposta.OutputStream.Close();
+                resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
+
+                resposta.ContentType = "text/css; cahrset=utf-8";
+                resposta.StatusCode = 200;
+                resposta.ContentLength64 = resourceStream.Length;
+
+                resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
+
+                resposta.OutputStream.Close();
+            }
+            else if (path == "Assets/js/main.js")
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                var nomeResource = "ByteBank.Portal.Assets.main.css";
+
+                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
+                var bytesResource = new byte[resourceStream.Length];
+
+                resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
+
+                resposta.ContentType = "application/js; cahrset=utf-8";
+                resposta.StatusCode = 200;
+                resposta.ContentLength64 = resourceStream.Length;
+
+                resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
+
+                resposta.OutputStream.Close();
+            }
 
             httpListener.Stop();
-
         }
     }
 }
