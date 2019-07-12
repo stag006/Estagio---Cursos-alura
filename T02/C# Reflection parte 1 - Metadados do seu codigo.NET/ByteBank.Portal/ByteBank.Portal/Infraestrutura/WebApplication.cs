@@ -16,7 +16,7 @@ namespace ByteBank.Portal.Infraestrutura
         public WebApplication(string[] prefixos)
         {
             if (prefixos == null)
-                throw new ArgumentException(nameof(prefixos));
+                throw new ArgumentNullException(nameof(prefixos));
             _prefixos = prefixos;
         }
 
@@ -31,61 +31,28 @@ namespace ByteBank.Portal.Infraestrutura
             var httpListener = new HttpListener();
 
             foreach (var prefixo in _prefixos)
-
                 httpListener.Prefixes.Add(prefixo);
 
-              httpListener.Start();
+            httpListener.Start();
 
             var contexto = httpListener.GetContext();
             var requisicao = contexto.Request;
             var resposta = contexto.Response;
 
-            var path = requisicao.Url.AbsolutePath;
+            var path = requisicao.Url.PathAndQuery;
 
             if (Utilidades.EhArquivo(path))
             {
-                var assembly = Assembly.GetExecutingAssembly();
-
-                var nomeResource = Utilidades.ConverterPathParaNomeAssembly(path);
-
-                var resourceStream = assembly.GetManifestResourceStream(nomeResource);
-
-                if (resourceStream == null)
-                {
-                    resposta.StatusCode = 404;
-                    resposta.OutputStream.Close();
-                }
-                else
-                {
-                    var bytesResource = new byte[resourceStream.Length];
-
-                    resourceStream.Read(bytesResource, 0, (int)resourceStream.Length);
-
-                    resposta.ContentType = Utilidades.ObterTipoDeConteudo(path);
-                    resposta.StatusCode = 200;
-                    resposta.ContentLength64 = resourceStream.Length;
-
-                    resposta.OutputStream.Write(bytesResource, 0, bytesResource.Length);
-                }
+                var manipulador = new ManipuladorRequisicaoArquivo();
+                manipulador.Manipular(resposta, path);
             }
-            else if (path == "/Cambio/USD")
+            else
             {
-                var controller = new CambioController();
-                var paginaConteudo = controller.USD();
-
-                var bufferArquivo = Encoding.UTF8.GetByteCount(paginaConteudo);  
-                
-                resposta.StatusCode = 200;
-                resposta.ContentType = "text/html; charset=utf-8";
-                resposta.ContentLength64 = bufferArquivo.Length;
-                
-
-                resposta.OutputStream.Write(bufferArquivo, 0, bufferArquivo.Length);
-                resposta.OutputStream.Close();
+                var manipulador = new ManipuladorRequisicaoController();
+                manipulador.Manipular(resposta, path);
             }
 
-            resposta.OutputStream.Close();
-
+            httpListener.Stop();
         }
     }
 }
