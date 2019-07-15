@@ -3,16 +3,24 @@ titulo.textContent = "Aparecida Nutricionista";
 
 var paciente = document.querySelector("#primeiro-paciente");
 
-var tdPeso = document.querySelector(".info-peso");
+var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 
-var tdaltura = paciente.querySelector(".info-altura");
-var altura = tdaltura.textContent;
+var tdAltura = paciente.querySelector(".info-altura");
+var altura = tdAltura.textContent;
 
+var tdImc = paciente.querySelector(".info-imc");
 
-console.log(paciente); // tr
-console.log(tdPeso); // td que tem o peso
-console.log(peso); // Obter 100
-console.log(tdaltura); // td que tem o peso
-console.log(altura); // Obter 100
+if(peso < 0 || peso > 1000)
+{
+   console.log("Peso inválido!");
+}
+
+if(altura < 0){
+    console.log("altura invalida!");
+}
+
+var imc = peso / (altura * altura); // 100 / (2*5)
+tdImc.textContent = imc;
+
 
