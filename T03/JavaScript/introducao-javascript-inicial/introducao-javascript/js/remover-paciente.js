@@ -5,10 +5,19 @@ var tabela = document.querySelector("table");
 var tabela = document.querySelector("table");
 
 tabela.addEventListener("dblclick", function(event) {
-    var alvoEvento = event.target;
-    var paiDoAlvo = alvoEvento.parentNode; // TR = paciente = remover 
-    paiDoAlvo.remove();
+   
+    event.target.parentNode.classList.add("fadeOut");
+    
+    setTimeout(function(){
+        event.target.parentNode.remove();    
+    },500);
+    
+    
 });
+
+
+
+
 // pacientes.forEach(function(paciente) {
 //  paciente.addEventListener("dblclick", function() {
 //        this.remove();
