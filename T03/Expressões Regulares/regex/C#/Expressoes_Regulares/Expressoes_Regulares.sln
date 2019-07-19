@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expressoes_Regulares", "Expressoes_Regulares.csproj", "{6772BEC4-24FF-406C-B123-B7CA22723B52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6772BEC4-24FF-406C-B123-B7CA22723B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6772BEC4-24FF-406C-B123-B7CA22723B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6772BEC4-24FF-406C-B123-B7CA22723B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6772BEC4-24FF-406C-B123-B7CA22723B52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2CD5B32-7733-4FD4-BD15-E76EAA8C9582}
+	EndGlobalSection
+EndGlobal
