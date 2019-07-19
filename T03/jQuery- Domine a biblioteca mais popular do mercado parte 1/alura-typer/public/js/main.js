@@ -1,6 +1,7 @@
 var tempoInicial = $("#tempo-digitacao").text();
 
-$(document).ready(function(){
+$(function(){
+    console.log("Pagina Carregou")
     atualizaTamnhoFrase();
     inicializaContadores();
     inicializaCronometro();            
