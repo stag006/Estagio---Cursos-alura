@@ -1,30 +1,27 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
-$(function(){
-    console.log("Pagina Carregou")
-    atualizaTamnhoFrase();
+$(function() {
+    atualizaTamanhoFrase();
     inicializaContadores();
-    inicializaCronometro();            
+    inicializaCronometro();
     inicializaMarcadores();
-    $("#botao-reiniciar").click(reiniciaJogo);    
+    $("#botao-reiniciar").click(reiniciaJogo);
 });
 
-function atualizaTamnhoFrase(){
+function atualizaTamanhoFrase() {
     var frase = $(".frase").text();
-    var numPalavras = frase.split(" ").length;
+    var numPalavras  = frase.split(" ").length;
     var tamanhoFrase = $("#tamanho-frase");
+
     tamanhoFrase.text(numPalavras);
-    
 }
 
-var campo = $(".campo-digitacao");
-
-function inicializaContadores(){
-        campo.on("input", function(){
+function inicializaContadores() {
+    campo.on("input", function() {
         var conteudo = campo.val();
 
-        var qtdPalavras = conteudo.split(/\S+/).length -1;    
+        var qtdPalavras = conteudo.split(/\S+/).length - 1;
         $("#contador-palavras").text(qtdPalavras);
 
         var qtdCaracteres = conteudo.length;
@@ -32,75 +29,50 @@ function inicializaContadores(){
     });
 }
 
-
-function inicializaCronometro() {
-    var tempoRestante =  $("#tempo-digitacao").text();
-    campo.one("focus",function(){
-        var cronometroID = setInterval(function(){
-            tempoRestante--;        
-            $("#tempo-digitacao").text(tempoRestante);
-            if(tempoRestante < 1){
-                clearInterval(cronometroID);
-                finalizaJogo();
-            }
-        },1000);
-    });
-}
-
-function finalizaJogo(){
-    campo.attr("disabled",true);
-    campo.toggleClass("campo-desativado");
-    inserePlacar();
-}
-
-function inicializaMarcadores(){
+function inicializaMarcadores() {
     var frase = $(".frase").text();
-    campo.on("input",function(){
+    campo.on("input", function() {
         var digitado = campo.val();
-        var comparavel = frase.substr(0,digitado.length);
-        console.log("digitado:" + digitado);
-        console.log("frase C.:" + comparavel);
+        var comparavel = frase.substr(0, digitado.length);
 
-        if(frase.startsWith){
+        if (digitado == comparavel) {
             campo.addClass("borda-verde");
             campo.removeClass("borda-vermelha");
-        }
-        else{
+        } else {
             campo.addClass("borda-vermelha");
             campo.removeClass("borda-verde");
         }
     });
 }
 
-function inserePlacar(){
-    var corpoTabela = $(".placar").find("tbody");
-    var usuario = "arthur";
-    var numPalavras = $("#contador-palavras").text();
-    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>"
-    
-    var linha = "<tr>"+
-                    "<td>"+ usuario + "</td>"+
-                    "<td>"+ numPalavras + "</td>"+        
-                    "<td>"+ botaoRemover + "</td>"+
-                "</tr>";
-    
-    corpoTabela.prepend(linha);
+function inicializaCronometro() {
+    var tempoRestante = $("#tempo-digitacao").text();
+    campo.one("focus", function() {
+    	var cronometroID = setInterval(function() {
+    		tempoRestante--;
+    		$("#tempo-digitacao").text(tempoRestante);
+    		if (tempoRestante < 1) {
+                clearInterval(cronometroID);
+                finalizaJogo();
+    		}
+    	}, 1000);
+    });
 }
 
-$(".botao-remover").click(function(event){
-    event.preventDefault();
-    $(this).parent().parent().remove();
-});
+function finalizaJogo() {
+    campo.attr("disabled", true);
+    campo.toggleClass("campo-desativado");
+    inserePlacar();
+}
 
-function reiniciaJogo(){
+function reiniciaJogo() {
     campo.attr("disabled", false);
     campo.val("");
-    $("#contador-palavras").text("0");
-    $("#contador-caracteres").text("0");
+    $("#contador-palavras").text(0);
+    $("#contador-caracteres").text(0);
     $("#tempo-digitacao").text(tempoInicial);
     inicializaCronometro();
     campo.toggleClass("campo-desativado");
     campo.removeClass("borda-vermelha");
     campo.removeClass("borda-verde");
 }
-
