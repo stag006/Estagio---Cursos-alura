@@ -11,6 +11,11 @@
     <div class="container">
         <h1 class="center">Alura Typer</h1>
         <p class="frase center">Eu sou lindo.</p>
+        
+        <div class="center">
+            <img src="img/spinner.gif" alt="Spinner" id="spinner">
+            <P id="erro">Ocorreu eu erro, por favor tente novamente.</P>
+        </div>
 
         <ul class="informacoes center">
             <li>
@@ -19,7 +24,7 @@
             </li>
             <li>
                 <i class="small material-icons icones">query_builder</i>
-                <span id="tempo-digitacao">10</span> segundos
+                <span id="tempo-digitacao">5</span> segundos
             </li>
         </ul>
 
@@ -29,6 +34,17 @@
             <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red">
                 <i class="material-icons">restore</i>
             </a>
+            <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light green">
+                <i class="material-icons">assignment</i>
+            </a>
+            <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue">
+                <i class="material-icons">shuffle</i>
+            </a>
+            <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan">
+                <i class="material-icons">repeat_one</i>
+            </a>
+            <input type="number" id="fraze-id" min="0">
+        </div>
         </div>
 
         <ul class="center">
@@ -56,6 +72,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
 
 </body>
 </html>
