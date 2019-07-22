@@ -1,4 +1,5 @@
 $("#botao-placar").click(mostraPlacar);
+$("#botao-placar").click(sincronizaPlacar);
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
@@ -54,4 +55,8 @@ function removeLinha() {
 
 function mostraPlacar(){
     $(".placar").stop().slideToggle(600);
+}
+
+function sincronizaPlacar() {
+    
 }
