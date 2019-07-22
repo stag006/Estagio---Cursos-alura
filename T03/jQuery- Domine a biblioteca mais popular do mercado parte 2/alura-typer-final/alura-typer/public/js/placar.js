@@ -1,5 +1,5 @@
 $("#botao-placar").click(mostraPlacar);
-$("#botao-placar").click(sincronizaPlacar);
+$("#botao-sync").click(sincronizaPlacar);
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
@@ -14,12 +14,12 @@ function inserePlacar() {
     scrollPlacar();
 }
 
-function scrollPlacar(){
+function scrollPlacar() {
     var posicaoPlacar = $(".placar").offset().top;
     $("body").animate(
     {
         scrollTop: posicaoPlacar + "px"
-    },1000);
+    }, 1000);
 }
 
 function novaLinha(usuario, palavras) {
@@ -45,55 +45,58 @@ function novaLinha(usuario, palavras) {
 function removeLinha() {
     event.preventDefault();
     var linha = $(this).parent().parent();
+
     linha.fadeOut(1000);
-    setTimeout(function(){
+    setTimeout(function() {
         linha.remove();
-        linha.remove();
-    },1000);
-    
+    }, 1000);
 }
 
-function mostraPlacar(){
+function mostraPlacar() {
     $(".placar").stop().slideToggle(600);
 }
 
-function sincronizaPlacar() {
+function sincronizaPlacar(){
+
     var placar = [];
-    var linhas = $("tbody> tr");
+    var linhas = $("tbody>tr");
+
     linhas.each(function(){
-       var usuario = $(this);find("td:nth-child(1)").text();
+        var usuario = $(this).find("td:nth-child(1)").text();
         var palavras = $(this).find("td:nth-child(2)").text();
-        
-        var scor = {
+
+        var score = {
             usuario: usuario,
-            pontos: palavras
+            pontos: palavras            
         };
-        
+
         placar.push(score);
-    });
-    
-    var dados = {
-        placar: placar
-    };
-    
-    $.post("http://localhost:3000/placar",dados,function(){
-        console.log("Salvou o placar no servidor.");
-        $(".tooltip").tooltipster("open").tooltipster("content","Sucesso ao sincronizar");
-    }).fail(function(){
-        $(".tooltip").tooltipster("open").tooltipster("content","Falha ao sincronizar");
-    }).always(function(){
-        setTimeout(function(){
-            $(".tooltip").tooltipster("close");
-        },1200);        
+
+        var dados = {
+            placar: placar
+        };
+
+        $.post("http://localhost:3000/placar", dados , function() {
+            console.log("Placar sincronizado com sucesso");
+            $(".tooltip").tooltipster("open"); 
+        }).fail(function(){
+            $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar"); 
+        }).always(function(){ //novo
+            setTimeout(function() {
+            $(".tooltip").tooltipster("close"); 
+        }, 1200);
+});
+
     });
 }
 
 function atualizaPlacar(){
     $.get("http://localhost:3000/placar",function(data){
-        
         $(data).each(function(){
             var linha = novaLinha(this.usuario, this.pontos);
+
             linha.find(".botao-remover").click(removeLinha);
+
             $("tbody").append(linha);
         });
     });

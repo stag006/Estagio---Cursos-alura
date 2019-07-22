@@ -6,23 +6,17 @@
     <link rel="stylesheet" href="css/libs/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/libs/selectize.default.css">
-    <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css">
+    <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css" />
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <div class="container">
         <h1 class="center">Alura Typer</h1>
-        <div class="slider">
-        <div class="slider">
-            <img src="img/slide1.png" class="imagem-jogo">
-            <img src="img/slide2.png" class="imagem-jogo">
-            <img src="img/slide3.png" class="imagem-jogo">
-        </div>
-        <p class="frase center">Eu sou lindo.</p>
-        
+        <p class="frase center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
         <div class="center">
             <img src="img/spinner.gif" alt="Spinner" id="spinner">
-            <P id="erro">Ocorreu eu erro, por favor tente novamente.</P>
+            <p id="erro">Ocorreu um erro, por favor tente novamente</p>
         </div>
 
         <ul class="informacoes center">
@@ -32,7 +26,7 @@
             </li>
             <li>
                 <i class="small material-icons icones">query_builder</i>
-                <span id="tempo-digitacao">5</span> segundos
+                <span id="tempo-digitacao">10</span> segundos
             </li>
         </ul>
 
@@ -51,22 +45,19 @@
             <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan">
                 <i class="material-icons">repeat_one</i>
             </a>
-            <input type="number" id="fraze-id" min="0">
-            
+            <input type="number" min="0" id="frase-id">
+
             <div class="select-usuarios">
                 <select id="usuarios">
                     <option value="Douglas">Douglas</option>
                     <option value="Flavio">Flavio</option>
                     <option value="Nico">Nico</option>
-                    <option value="Silvio">Silvio</option>                
                 </select>
-            
             </div>
-            
-             <a id="botao-sync" title="Sincronizado com Sucesso" class="tooltip btn-floating btn-large waves-effect waves-light yellow">
+
+             <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow tooltip" title="Sincronizado com sucesso">
                 <i class="material-icons">swap_vert</i>
             </a>
-        </div>
         </div>
 
         <ul class="center">
@@ -92,11 +83,13 @@
     </div>
 
     <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
     <script src="js/frase.js"></script>
     <script src="js/selectize.js"></script>
     <script src="js/tooltipster.bundle.min.js"></script>
+
 
 </body>
 </html>

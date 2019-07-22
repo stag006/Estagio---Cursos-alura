@@ -8,17 +8,18 @@ $(function() {
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+
     $("#usuarios").selectize({
         create: true,
         sortField: 'text'
     });
+
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
 });
 
-$('.tooltip').tooltipster({
-    trigger: "custom"
-})
-
-function atualizaTempoInicial(){
+function atualizaTempoInicial(tempo) {
     tempoInicial = tempo;
     $("#tempo-digitacao").text(tempo);
 }
@@ -45,7 +46,7 @@ function inicializaContadores() {
 
 function inicializaMarcadores() {
     campo.on("input", function() {
-    var frase = $(".frase").text();    
+        var frase = $(".frase").text();
         var digitado = campo.val();
         var comparavel = frase.substr(0, digitado.length);
 
@@ -58,8 +59,8 @@ function inicializaMarcadores() {
         }
     });
 }
- 
-function inicializaCronometro() {    
+
+function inicializaCronometro() {
     campo.one("focus", function() {
         var tempoRestante = $("#tempo-digitacao").text();
     	var cronometroID = setInterval(function() {
