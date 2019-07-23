@@ -8,19 +8,27 @@ var criaJogo = function(sprite) {
     // novas funcionaliades
 
     var ganhou = function () {
-        console.log('falta implementar');
-    };
+        
+        return lacunas.length
+        ? !lacunas.some(function(lacunas){
+            return lacuna == '';  
+        })
+        : false;
+    };    
 
     var perdeu = function () {
-        console.log('falta implementar');
+        return sprite.isfinished();
     };
 
     var ganhouOuPerdeu = function () {
-        console.log('falta implementar');
+        return ganhou()  || perdeu();
     };
 
     var reinicia = function () {
-        console.log('falta implementar');
+        etapa = 1;
+        lacunas = [];
+        palavraSecreta = '';
+        sprite.reset();
     };
     
     var processaChute = function (chute) {
@@ -69,7 +77,12 @@ var criaJogo = function(sprite) {
         setPalavraSecreta: setPalavraSecreta, 
         getLacunas: getLacunas,
         getEtapa: getEtapa,
-        processaChute: processaChute
+        processaChute: processaChute,
+        ganhou: ganhou,
+        perdeu: perdeu,
+        ganhouOuPerdeu: ganhouOuPerdeu,
+        reinicia: reinicia
+        
     };
 };
 
