@@ -6,20 +6,29 @@ var criaController = function (jogo) {
     // consulta jogo.getLacunas() e exibe para o usuário cada lacuna 
 
     var exibeLacunas = function () {
-        console.log('falta implementar');
+        $lacunas.empty();
+        jogo.getLacunas().forEach(function(lacuna){
+            $('<li>')
+                .addClass('lacuna')
+                .text(lacuna)
+                .appendTo($lacunas);
+        });
     };
 
     // muda o texto do placeHolder do campo de entrada    
     var mudaPlaceHolder = function (texto) {
 
-        console.log('falta implementar');
+        $entrada.attr('placeholder', texto);
     };
 
     // passa para jogo.setPalavraSecreta() o valor digitado pelo jogador e chama o a função `exibeLacunas()` e `mudaPlaceHolder()` definidas no controller. 
 
     var guardaPalavraSecreta = function () {
 
-        console.log('falta implementar');
+        jogo.setPalavraSecreta($entrada.val().trim());
+        $entrada.val('');
+        mudaPlaceHolder('chuta');
+        exibeLacunas();
     };
 
     // faz a associação do evento keypress para capturar a entrada do usuário toda vez que ele teclar ENTER
@@ -29,7 +38,7 @@ var criaController = function (jogo) {
             if (event.which == 13) {
                 switch (jogo.getEtapa()) {
                     case 1:
-                        alert('etapa 1 - falta implementar');
+                        guardaPalavraSecreta();
                         break;
                     case 2:
                         alert('etapa 2 - falta implementar');
@@ -42,9 +51,3 @@ var criaController = function (jogo) {
     // retorna um objeto com a propriedade inicia, que deve ser chamada assim que o controller for criado. 
     return { inicia: inicia };
 };
-
-criaController(
-    criaJogo(
-        createSprite('.sprite')
-    )
-).inicia();
