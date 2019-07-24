@@ -1,0 +1,24 @@
+SGBD
+- Sistema Gerenciador de Banco de Dados.
+- DBMS: DataBase Management System.
+- SGBD não é um banco de dados, ,mas sim um complemento.
+
+
+SQL( Structured Query Language)
+-Linguagem Estruturada de Consulta
+
+Ela é formada por 5 tipos de linguagem
+- DDL ( Data Definition Language )
+- DML
+- DQL (Data Query Language)
+- DCL ( Data Control Language )
+- DTL ( Data Transaction, Language )
+
+
+Chave primária (Primary Key. Pk)
+
+Chave Composta 
+-Coposicao de duas ou mais colunas para gerar um combinação  única
+
+Chave Estrangeira (Foreifn Key, FK)
+Coluna que armazena a chave primária de outra tabela
