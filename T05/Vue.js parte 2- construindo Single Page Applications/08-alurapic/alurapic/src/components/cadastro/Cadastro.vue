@@ -7,18 +7,18 @@
     <form @submit.prevent="grava()">
       <div class="controle">
         <label for="titulo">TÍTULO</label>
-        <input id="titulo" autocomplete="off">
+        <input id="titulo" autocomplete="off" v-model.lazy="foto.titulo">
       </div>
 
       <div class="controle">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off">
-        <imagem-responsiva/>
+        <input id="url" autocomplete="off" v-model.lazy="foto.url">
+        <imagem-responsiva v-show="foto.url" :url="foto.url" :titulo="foto.titulo"/>
       </div>
 
       <div class="controle">
         <label for="descricao">DESCRIÇÃO</label>
-        <textarea id="descricao" autocomplete="off">
+        <textarea id="descricao" autocomplete="off" v-model="foto.descricao">
         </textarea>
       </div>
 
@@ -59,6 +59,8 @@ export default {
     methods: {
         grava() {
             console.log('enviar dados para API');
+
+            console.log(this.foto);
 
             this.foto = {
                 titulo: '',
