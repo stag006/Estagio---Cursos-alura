@@ -9,6 +9,13 @@
 
       <meu-painel :titulo="foto.titulo">
         <imagem-responsiva :url="foto.url" :titulo="foto.titulo">
+        <meu-botao 
+            tipo="button" 
+            rotulo="remover" 
+            @botaoAtivado="remove($event, foto)"
+            :confirmacao= "true"
+            estilo="perigo"/>
+
       </meu-painel>
 
       </li>
@@ -19,10 +26,12 @@
 <script>
 import Painel from '../shared/painel/painel.vue';
 import ImagemResponsilva from '../shared/imagem-responsiva/ImagemResponsiva.vue';
+import Botao from '../shared/botao/Botao.vue';
 
 export default {
   'meu-painel' : Painel,
   'imagem-responsiva': imagemResposiva
+  'meu-botao' : Botao
 },
 
 data() {
@@ -47,14 +56,21 @@ computed: {
   }
 },
 
+methods: {
+
+remove(foto) {
+        
+        alert('Remover a foto' + foto.titulo);
+    }
+},
+
+
 created() {
   this.$http
     .get('http://localhost:3000/v1/fotos')
     .then(res => res.json())
     .then(fotos => this.fotos = fotos, err => console.log(err));
 }
-  
-
 
 </script>
 
