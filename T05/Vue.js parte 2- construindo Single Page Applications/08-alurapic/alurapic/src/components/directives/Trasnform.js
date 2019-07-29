@@ -9,15 +9,24 @@ Vue.directive('meu-transform', {
         el.addEventListener('dbclick', function() {
 
             let incremento = binding.value || 90;
+            let efeito;
 
-            if(binding.modifiers.reverse) {
-                cuerrent-=incremento;
-            }else {
-                current+=incremento;
+            if(!binding.arg || binding.arg == 'rotate') {
+                
+                if(binding.modifiers.reverse) {
+                    cuerrent-=incremento;
+                }else {
+                    current+=incremento;
+                }
+
+                efeito = `rotate(${current}deg)`;
+            }else if(binfing.arg == "scale") {
+                efeito = `scale(${incremento})`;
             }
+            
 
-            current+=incremento;
-            el.style.transform = `rotate(${current}deg)`;
+            
+            el.style.transform = efeito;
 
             if(binding.modifiers.animate) el.style.transition = 'transform 0.5s';
         });
