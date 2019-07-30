@@ -9,12 +9,11 @@ import msg from './pt_BR';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/teste.css';
 import './assets/js/teste.js';
-
-import 'jquey/dist/jquey.js';
 import 'bootstrap/dist/js/bootstrap.js';
 
 Vue.use(VueResource);
 Vue.http.options.root = 'http://localhost:3000';
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({ 
@@ -23,10 +22,10 @@ const router = new VueRouter({
 });
 
 Vue.use(VeeValidate, {
-
+  
   locale: 'pt_BR',
   dictionary: {
-    pt_BR {
+    pt_BR: {
       messages: msg
     }
   }

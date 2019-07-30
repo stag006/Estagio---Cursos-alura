@@ -49,8 +49,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="sass">
 
-    @import './botao.scss';
-
+    @import './Botao.scss';
+  
 </style>
