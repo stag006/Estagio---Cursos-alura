@@ -8,15 +8,38 @@ export default  class FotoService {
         return  this._resource
         .query()
         .then(res => res.json());
+            console.log(err);
+            throw new Error('Não foi possivel obter as fotos');
     }
 
     cadastra(foto) {
-        return this._resource
+
+        if(foto._id) {
+            return this._resource
+            .update({ id: foto._id}, foto);
+
+        }else {
+            return this._resource
             .save(foto);
+        }
+        
+            
     }
 
     apaga(id) {
-        return this._resourcedelete({ id })
+        return this._resource
+        .delete({ id })
+        .then(null, err => {
+            console.log(err);
+            throw new Error('não foi possível remover a foto')
+        })
+
+    }
+
+    busca(id) {
+        return this._resource
+            .get({ id })
+            .then(res => res.json());
     }
 
 }
